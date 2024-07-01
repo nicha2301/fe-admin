@@ -5,11 +5,10 @@ export const RssList = (props: any) => {
     return (
         <List {...props}>
             <Datagrid>
-                <TextField source="id"/>
                 <TextField source="link"/>
                 <TextField source="category"/>
-                <EditButton resource="update"/>
-                <DeleteButton resource="delete"/>
+                <EditButton />
+                <DeleteButton />
             </Datagrid>
        </List>
     )

@@ -1,14 +1,14 @@
 import { Edit, SimpleForm, TextInput } from "react-admin"
 
 
-export const UserEdit = (props: any) => {
+export const ReadEdit = (props: any) => {
     return (
         <Edit title={"Create a user"} {...props}>
             <SimpleForm>
                 <TextInput disabled source="id" />
-                <TextInput source="username" />
-                <TextInput disabled source="pass" />
-                <TextInput source="role" />
+                <TextInput source="link" />
+                <TextInput source="userId" />
+                <TextInput source="reportId" />
             </SimpleForm>
         </Edit>
     )

@@ -11,15 +11,21 @@ import { UserEdit } from "./component/UserEdit";
 import { UserList } from "./component/UserList";
 import { Layout } from "./Layout";
 import { authProvider } from './auth/authProvider';
+import customDataProvider from './customDataProvider';
+import { RssEdit } from './component/RssEdit';
+import { ReadEdit } from './component/ReadEdit';
+import { ReportEdit } from './component/ReportEdit';
+import { RssCreate } from './component/RssCreate';
+import { EditButton } from 'react-admin';
 
-const dataProvider = restProvider('http://localhost:8080/api');
+const dataProvider = customDataProvider('http://localhost:8080/api');
 
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider} authProvider={authProvider}>
-    <Resource name="user/all" list={UserList} create={UserCreate} edit={UserEdit}/>
-    <Resource name="article-read/all" list={ReadedList} create={UserCreate} edit={UserEdit}/>
-    <Resource name="report/all" list={ReportList} create={UserCreate} edit={UserEdit}/>
-    <Resource name="rss/all" list={RssList} create={UserCreate} edit={UserEdit}/>
+  <Admin layout={Layout} dataProvider={dataProvider}>
+    <Resource name="user" list={UserList} create={UserCreate}/>
+    <Resource name="article-read" list={ReadedList}/>
+    <Resource name="report" list={ReportList} edit={ReportEdit}/>
+    <Resource name="rss" list={RssList} create={RssCreate} edit={RssEdit}/>
   </Admin>
 );
