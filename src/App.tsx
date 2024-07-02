@@ -22,7 +22,7 @@ const dataProvider = customDataProvider('http://localhost:8080/api');
 
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider}>
+  <Admin layout={Layout} dataProvider={dataProvider} authProvider={authProvider}>
     <Resource name="user" list={UserList} create={UserCreate}/>
     <Resource name="article-read" list={ReadedList}/>
     <Resource name="report" list={ReportList} edit={ReportEdit}/>
