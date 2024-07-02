@@ -6,7 +6,7 @@ export const RssList = (props: any) => {
         <List {...props}>
             <Datagrid>
                 <TextField source="link"/>
-                <TextField source="category"/>
+                <TextField source="name"/>
                 <EditButton />
                 <DeleteButton />
             </Datagrid>
